@@ -139,7 +139,6 @@ public class CheckBookRowFactory implements TableRowFactory {
     public void calculateTotalBalance(Row mRow){
         if (mRow != null && mRow.containsValue(Row.BALANCE_VALUE) ) {
             String balance = balanceCalculator.calculateTotalBalance(mRow.getBalanceValue());
-            mRow.setBalanceValue(balance);
         }
     }
 
