@@ -9,36 +9,42 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-        <LinearLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Checkbook Ledger"
+                android:textSize="15sp" />
 
-            <RelativeLayout
+            <TableLayout
+                android:id="@+id/table_check_book"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TableLayout
-                    android:id="@+id/table_check_book"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></TableLayout>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/header"
+                android:layout_marginTop="5dp" />
 
 
-                <TextView
-                    android:id="@+id/total_balance"
-                    android:layout_below="@id/table_check_book"
-                    android:layout_alignParentRight="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </RelativeLayout>
-
+            <TextView
+                android:id="@+id/total_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/table_check_book" />
 
 
             <Button
                 android:id="@+id/table_add_new_row"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/total_balance"
                 android:layout_gravity="center_horizontal"
                 android:text="+"
                 android:textSize="30sp" />
@@ -47,10 +53,12 @@
                 android:id="@+id/table_save_row"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/table_add_new_row"
                 android:text="Save"
                 android:textSize="20sp" />
 
-        </LinearLayout>
+        </RelativeLayout>
+
     </ScrollView>
 </RelativeLayout>

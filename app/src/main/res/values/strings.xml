@@ -2,9 +2,8 @@
     <string name="app_name">MVP</string>
 
     <string name="title_section1">Home</string>
-    <string name="title_section2">Section2</string>
-    <string name="title_section3">Section3</string>
-    <string name="title_section4">Section4</string>
+    <string name="title_section2">Overview</string>
+    <string name="title_section3">Settings</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
