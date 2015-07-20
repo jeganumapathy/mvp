@@ -10,10 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 import com.m.mvp.R;
 import com.m.mvp.database.CheckBookDataBase;
 import com.m.mvp.database.DaoFactory;
+import com.m.mvp.logic.BalanceCalculator;
 import com.m.mvp.logic.CheckBookRowFactory;
 import com.m.mvp.logic.CheckBookRowTemplate;
 import com.m.mvp.model.Row;
@@ -32,6 +34,7 @@ public class CheckBookFragment extends CoreFragment implements CheckBookPresente
     private CheckBookRowFactory mFactory;
     private TableLayout checkLayout;
     private Handler mHandler = new Handler();
+    private TextView totalBalance;
 
     public static CheckBookFragment getNewInstance(Bundle args) {
         CheckBookFragment mInstance = new CheckBookFragment();
@@ -52,12 +55,15 @@ public class CheckBookFragment extends CoreFragment implements CheckBookPresente
         //DO YOUR INITIALIZATION HERE
         mFactory = new CheckBookRowFactory(getActivity());
         checkLayout = (TableLayout) rootView.findViewById(R.id.table_check_book);
+        totalBalance = (TextView) rootView.findViewById(R.id.total_balance);
         return rootView;
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        totalBalance.setText("" + BalanceCalculator._total_balance);
+
     }
 
     @Override

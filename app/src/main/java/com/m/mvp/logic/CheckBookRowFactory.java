@@ -32,7 +32,7 @@ public class CheckBookRowFactory implements TableRowFactory {
     private TableRow.LayoutParams mTableRowLayoutParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
     private static final int HEADER_TEXT_COLOR = Color.BLACK;
     private CheckBookRowTemplate rowTemplate;
-    private BalanceCalculator balanceCalculator;
+    public BalanceCalculator balanceCalculator;
 
     public CheckBookRowFactory(Context context) {
         this.rowTemplate = new CheckBookRowTemplate();
