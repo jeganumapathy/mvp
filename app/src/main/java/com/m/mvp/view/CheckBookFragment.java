@@ -80,7 +80,7 @@ public class CheckBookFragment extends CoreFragment implements CheckBookPresente
             @Override
             public void run() {
                 mFactory.preLoadRow(checkLayout, rows);
-                totalBalance.setText("Total Balance" + mFactory.balanceCalculator._total_balance);
+                totalBalance.setText("Total Balance   " + mFactory.balanceCalculator._total_balance);
             }
         });
 
