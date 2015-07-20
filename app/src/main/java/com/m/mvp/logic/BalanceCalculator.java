@@ -5,7 +5,7 @@ package com.m.mvp.logic;
  */
 public class BalanceCalculator {
 
-    public static float _total_balance = 0;
+    public  float _total_balance = 0;
 
     public static float convertStringToFloat(String stringFloat) {
         float f = 0;
