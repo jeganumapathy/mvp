@@ -15,6 +15,7 @@ import android.support.v4.widget.DrawerLayout;
 
 import com.m.mvp.view.CheckBookFragment;
 import com.m.mvp.view.HomeFragment;
+import com.m.mvp.view.SMSListFragment;
 
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -49,12 +50,13 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         int number = position + 1;
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        Bundle args= new Bundle();
+        Bundle args = new Bundle();
         args.putInt(HomeFragment.ARG_SECTION_NUMBER, number);
         switch (number) {
             case 1:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, CheckBookFragment.getNewInstance(args))
+                        .replace(R.id.container, SMSListFragment.getNewInstance(args)
+                        )
                         .commit();
                 break;
             case 2:
@@ -64,7 +66,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                 break;
             case 3:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, PlaceholderFragment.newInstance(number))
+                        .replace(R.id.container, CheckBookFragment.getNewInstance(args))
                         .commit();
                 break;
         }
