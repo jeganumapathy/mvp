@@ -19,7 +19,9 @@ public class SMSReader {
             do {
                 String msgData = "";
                 for (int idx = 0; idx < cursor.getColumnCount(); idx++) {
-                        msgData += " " + cursor.getColumnName(idx) + ":" + cursor.getString(idx);
+                    if ("body".equalsIgnoreCase(cursor.getColumnName(idx))) {
+                    }
+                    msgData += " " + cursor.getColumnName(idx) + ":" + cursor.getString(idx);
                 }
                 listOfSMS.add(msgData);
                 // use msgData
@@ -27,6 +29,7 @@ public class SMSReader {
         } else {
             // empty box, no SMS
         }
+        cursor.close();
         return listOfSMS;
     }
 
