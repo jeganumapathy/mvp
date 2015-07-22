@@ -38,19 +38,12 @@ public class SMSListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        FragmentManager manager = getActivity().getSupportFragmentManager();
-        manager.beginTransaction()
-                .replace(R.id.container, SMSListFragment.getNewInstance(null)).commit();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         SMSViewAdapter viewAdapter = new SMSViewAdapter(listOfSMS,inflater.getContext());
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                inflater.getContext(), android.R.layout.simple_list_item_1,
-                listOfSMS);
-        setListAdapter(adapter);
+        setListAdapter(viewAdapter);
         return super.onCreateView(inflater, container, savedInstanceState);
 
     }

@@ -22,8 +22,9 @@ public class SMSReader {
                 SMSViewAdapter.DataHolder dataHolder = new SMSViewAdapter.DataHolder();
                 String msgData = "";
                 for (int idx = 0; idx < cursor.getColumnCount(); idx++) {
-                    String value = cursor.getColumnName(idx);
-                    if ("body".equalsIgnoreCase(value)) {
+                    String key =cursor.getColumnName(idx);
+                    String value =  cursor.getString(idx);
+                    if ("body".equalsIgnoreCase(key)) {
                         dataHolder.body = value;
                     }
                     msgData += " " + cursor.getColumnName(idx) + ":" + cursor.getString(idx);
