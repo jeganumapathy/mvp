@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentManager;
 
 import com.m.mvp.R;
 import com.m.mvp.logic.SMSReader;
+import com.m.mvp.view.adapter.SMSViewAdapter;
 
 import java.util.LinkedList;
 
@@ -18,7 +19,7 @@ import java.util.LinkedList;
  */
 public class SMSListFragment extends ListFragment {
 
-    LinkedList<String> listOfSMS;
+    LinkedList<SMSViewAdapter.DataHolder> listOfSMS;
 
     public static SMSListFragment getNewInstance(Bundle args) {
         SMSListFragment mInstance = new SMSListFragment();
@@ -44,6 +45,8 @@ public class SMSListFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        SMSViewAdapter viewAdapter = new SMSViewAdapter(listOfSMS,inflater.getContext());
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 inflater.getContext(), android.R.layout.simple_list_item_1,
                 listOfSMS);

@@ -14,4 +14,5 @@
 
     <string name="label_credit">Credit</string>
     <string name="label_debit">Debit</string>
+    <string name="label_template_select">Select a Template</string>
 </resources>
