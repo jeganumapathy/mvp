@@ -12,30 +12,9 @@
         android:text="@string/label_template_select" />
 
     <TextView
-        android:layout_below="@id/label_header"
         android:id="@+id/sms_body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textIsSelectable="true" />
+        android:layout_below="@id/label_header" />
 
-    <RadioGroup
-        android:layout_below="@id/sms_body"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/credit_radio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_credit" />
-
-        <RadioButton
-            android:id="@+id/debit_radio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_debit" />
-
-    </RadioGroup>
 </RelativeLayout>

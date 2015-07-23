@@ -43,7 +43,7 @@ public class SMSViewAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @Override
@@ -52,9 +52,9 @@ public class SMSViewAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.adapter_sms_view, null);
             mViewHolder = new ViewHolder();
-            mViewHolder.creditRadio = (RadioButton) convertView.findViewById(R.id.credit_radio);
-            mViewHolder.debitRadio = (RadioButton) convertView.findViewById(R.id.debit_radio);
-            mViewHolder.smsBodyText = (TextView) convertView.findViewById(R.id.sms_body);
+            //mViewHolder.creditRadio = (RadioButton) convertView.findViewById(R.id.credit_radio);
+           // mViewHolder.debitRadio = (RadioButton) convertView.findViewById(R.id.debit_radio);
+           mViewHolder.smsBodyText = (TextView) convertView.findViewById(R.id.sms_body);
             convertView.setTag(mViewHolder);
         } else {
             mViewHolder = (ViewHolder) convertView.getTag();
@@ -66,8 +66,8 @@ public class SMSViewAdapter extends BaseAdapter {
     private void populateView(int position, ViewHolder mViewHolder) {
         DataHolder dataHolder = (DataHolder) getItem(position);
         mViewHolder.smsBodyText.setText("" + dataHolder.body);
-        mViewHolder.creditRadio.setChecked(dataHolder.isCreditTemplate);
-        mViewHolder.debitRadio.setChecked(dataHolder.isDebitTemplate);
+        //mViewHolder.creditRadio.setChecked(dataHolder.isCreditTemplate);
+       // mViewHolder.debitRadio.setChecked(dataHolder.isDebitTemplate);
     }
 
     public class ViewHolder {
