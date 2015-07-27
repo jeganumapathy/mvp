@@ -56,17 +56,17 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
             case 1:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, SMSListFragment.getNewInstance(args)
-                        )
+                        ).addToBackStack(null)
                         .commit();
                 break;
             case 2:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, HomeFragment.getNewInstance(args))
+                        .replace(R.id.container, HomeFragment.getNewInstance(args)).addToBackStack(null)
                         .commit();
                 break;
             case 3:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, CheckBookFragment.getNewInstance(args))
+                        .replace(R.id.container, CheckBookFragment.getNewInstance(args)).addToBackStack(null)
                         .commit();
                 break;
         }
