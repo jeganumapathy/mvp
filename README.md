@@ -1,4 +1,3 @@
-# mvp
 In MVP, the Presenter contains the UI business logic for the View. All invocations from the View delegate directly to Presenter. The Presenter is also decoupled directly from the View and talks to it through an interface. This is to allow mocking of the View in a unit test. One common attribute of MVP is that there has to be a lot of two-way dispatching. For example, when someone clicks the "Save" button, the event handler delegates to the Presenter's "OnSave" method. Once the save is completed, the Presenter will then call back the View through its interface so that the View can display that the save has completed.
 
 MVP tends to be a very natural pattern for achieving separated presentation in Web Forms. The reason is that the View is always created first by the ASP.NET runtime. You can find out more about both variants.
