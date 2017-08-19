@@ -11,3 +11,5 @@ Supervising Controller: The Presenter handles user gestures. The View binds to t
 
 Pro: by leveraging databinding the amount of code is reduced.
 Con: there's less testable surface (because of data binding), and there's less encapsulation in the View since it talks directly to the Model.
+
+Another text added
